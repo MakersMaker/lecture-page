@@ -21,3 +21,13 @@ footer {
     padding: 0;
     height: 10%;
 }
+
+.collapse {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#code_editor_tab {
+    margin: 0px 5px 0px 5px; /* top right bottom left */
+}
