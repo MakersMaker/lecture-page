@@ -6,10 +6,12 @@
     <meta name="Description" content="jQuery Splitter Demo"/>
     <link rel="shortcut icon" href=""/>
 
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="index.css">
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/jquery.splitter/js/jquery.splitter.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <link href="node_modules/jquery.splitter/css/jquery.splitter.css" rel="stylesheet"/>
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -41,7 +43,7 @@ jQuery(function($) {
         background-color: red;
     }
     #code_editor {
-        background-color: blue;
+
     }
     #lecture_streaming {
         background-color: aqua;
@@ -61,7 +63,28 @@ jQuery(function($) {
         <div id="lecture_overview">
         </div>
         <div id="middle_right_widget">
-            <div id="code_editor"></div>
+            <div id="code_editor">
+                <ul class="nav nav-tabs" id="code_editor_tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="html-tab" data-toggle="tab" href="#home" role="tab" aria-controls="html" aria-selected="true">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="css-tab" data-toggle="tab" href="#css_content" role="tab" aria-controls="css" aria-selected="false">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="javascript-tab" data-toggle="tab" href="#javascript_content" role="tab" aria-controls="javascript" aria-selected="false">Javascript</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview_content" role="tab" aria-controls="preview" aria-selected="false">Preview</a>
+                      </li>
+                  </ul>
+                  <div class="tab-content" id="code_editor_tab_content">
+                    <div class="tab-pane fade show active" id="html_content" role="tabpanel" aria-labelledby="html_content">This is html</div>
+                    <div class="tab-pane fade" id="css_content" role="css_content" aria-labelledby="css_content">This is css</div>
+                    <div class="tab-pane fade" id="javascript_content" role="javascript_content" aria-labelledby="javascript_content">This is javascript</div>
+                    <div class="tab-pane fade" id="preview_content" role="preview_content" aria-labelledby="preview_content">This is preview</div>
+                  </div>
+            </div>
             <div id="right_upper_lower_widget">
                 <div id="lecture_streaming"></div>
                 <div id="lecture_chatt"></div>
