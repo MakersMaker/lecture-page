@@ -10,6 +10,10 @@
         }
         var panel_1;
         var panel_2;
+
+        //내가 커스터 마이징 한 부분
+        var panel_3;
+
         var settings = $.extend({
             limit: 100,
             orientation: 'horizontal',
@@ -25,8 +29,25 @@
             panel_2 = panel_1.next().addClass('right_panel');
             cls = 'vsplitter';
         } else if (settings.orientation == 'horizontal') {
-            panel_1 = children.first().addClass('top_panel')
+            panel_1 = children.first().addClass('top_panel');
             panel_2 = panel_1.next().addClass('bottom_panel');
+            panel_3 = panel_2.children();
+            panel_3 = panel_3.first().addClass('bottom_upper_panel');
+            if ('middle_code' === panel_2.attr('id')) {
+                $(panel_2).height('100%').split({
+                    orientation: 'vertical',
+                    limit: 10,
+                    position: '50%', // if there is no percentage it interpret it as pixels
+                    onDrag: function(event) {
+                        console.log(splitter.position());
+                    }
+                });
+                panel_3.next().addClass('bottom_lower_panel');
+            }
+
+            // panel_1 = children.first().addClass('top_panel')
+            // panel_2 = panel_1.next();
+            // panel_3 = panel_2.next().addClass('mid_pane');
             cls = 'hsplitter';
         }
         var width = this.width();
@@ -47,12 +68,12 @@
                 var match = position.match(/^([0-9]+)(px|%)$/);
                 if (match) {
                     if (match[2] == 'px') {
-                        return +match[1];
+                        return + match[1];
                     } else {
                         if (settings.orientation == 'vertical') {
-                            return (width * +match[1]) / 100;
+                            return (width * + match[1]) / 100;
                         } else if (settings.orientation == 'horizontal') {
-                            return (height * +match[1]) / 100;
+                            return (height * + match[1]) / 100;
                         }
                     }
                 } else {
