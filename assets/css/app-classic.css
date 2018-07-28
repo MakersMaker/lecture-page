@@ -1,0 +1,155 @@
+/*!
+ * HTMLEdito - HTML, CSS, JS Live Preview Editor v1.0
+ * Style for Classic Version
+ * Copyright 2017 AMPBlogger (https://www.codecanyon.net/user/ampblogger).
+ * License: https://codecanyon.net/licenses/standard
+ */
+@font-face {
+  font-family: 'Montserrat';
+  src: local('Montserrat'),
+       local('Montserrat-Medium'),
+       url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+       url('../fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}  
+body {
+    margin: 0;
+}
+.CodeMirror {
+    float: left;
+    width: 49.9%;
+    border: 1px solid #ccc;
+    height: 602px;
+    line-height: 1.4;
+    box-sizing: border-box;
+}
+iframe#preview {
+    width: 50%;
+    float: left;
+    height: 600px;
+    border: 1px solid #ccc;
+    border-left: 0;
+    background-color: white;
+}
+div.htmledito-footer {
+    font-family: sans-serif;
+    font-size: 13px;
+}
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.brand {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: #EC0D8E;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-right: 3px;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.2);
+    text-align: center;
+}
+.brand-span {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #914C90;
+    font-weight: 500;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(11,11,11,.5);
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    border-radius: inherit;
+    padding: 3px 4px;
+    border-radius: 3px;
+}
+p.theme-option,
+div.font-sizer {
+    font-family: sans-serif;
+    font-size: 13px;
+}
+div.CodeMirror-vscrollbar::-webkit-scrollbar,
+#preview::-webkit-scrollbar {
+    width: 7px;
+    background-color: #FFF;
+}
+div.CodeMirror-vscrollbar::-webkit-scrollbar-thumb,
+#preview::-webkit-scrollbar-thumb {
+    background-color: #bcbcbc;
+    border-radius: 10px;
+    border: 1px solid #a8a8a8;
+}
+div.CodeMirror-vscrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #bf4649;
+    border: 1px solid #333;
+}
+div.CodeMirror-vscrollbar::-webkit-scrollbar-thumb:active {
+    background-color: #a6393d;
+    border: 1px solid #333;
+}
+div.CodeMirror-vscrollbar::-webkit-scrollbar-track,
+#preview::-webkit-scrollbar-track {
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 6px gray inset;
+}
+#preview::-webkit-scrollbar-thumb:hover {
+    background-color: #bf4649;
+    border: 1px solid #333;
+}
+#preview::-webkit-scrollbar-thumb:active {
+    background-color: #a6393d;
+    border: 1px solid #333;
+}
+div.htmledito-settings p {
+    float: left;
+    margin-top: 0.9em;
+    margin-left: 0.9em;
+}
+div.font-sizer {
+    float: left;
+    margin-top: 0.9em;
+    margin-left: 0.9em;
+}
+div.font-sizer img {
+    margin-right: 8px;
+    vertical-align: bottom;
+}
+div.about {
+    float: right;
+    margin-top: -7px;
+    margin-right: 1em;
+}
+@media screen and (max-width:1024px) {
+    .CodeMirror,
+     {
+        width: 49%;
+    }
+    iframe#preview {
+        width: 49.9%;
+    }
+}
+@media screen and (max-width:500px) {
+    .CodeMirror,
+    iframe#preview {
+        width: 100%;
+    }
+    .CodeMirror {
+        height: 15em;
+    }
+    iframe#preview {
+        height: 15em;
+    }
+}
+.about {
+    font-family: sans-serif;
+    color: #555;
+}
+.font-sizer img {
+    border: 0;
+}
