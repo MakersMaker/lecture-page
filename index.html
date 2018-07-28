@@ -1,514 +1,79 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
-    <title>MakerMaker</title>
-    <style>
-        #container {
-          height: 100%;
-          width:100%;
-          margin:0 auto;
-          text-align:center;
-        }
-        .tab {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-        }
-        /* Float the list items side by side */
-        .tab li {
-          float: left;
-        }
-        /* Style the links inside the list items */
-        .tab li a {
-          display: inline-block;
-          color: #000;
-          text-align: center;
-          text-decoration: none;
-          padding: 14px 16px;
-          font-size: 17px;
-          transition:0.3s;
-        }
-        /* Style the tab content */
-        .tabcontent {
-          display: none;
-          background-color:rgb(173,216,230);
-          padding: 6px 12px;
-          color:#222;
-        }
-        ul.tab li.current{
-          background-color: rgb(173,216,230);
-          color: #222;
-        }
-        .tabcontent.current {
-          display: block;
-        }
-      </style>
+<head>
+    <meta charset="utf-8" />
+    <title>jQuery Splitter Demo</title>
+    <meta name="Description" content="jQuery Splitter Demo"/>
+    <link rel="shortcut icon" href=""/>
 
-    <meta name="description" content="HTMLEdito is HTML Editor, CSS Editor and Javascript Editor script in one simple and user-friendly UI. It is build with HTML5, CSS3 and many javascript libraries"/>
+    <link rel="stylesheet" href="index.css">
 
-    <!-- icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/htmledito/apple-touch-icon.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/htmledito/favicon-32x32.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/htmledito/favicon-16x16.png"/>
-    <link rel="manifest" href="assets/htmledito/site.webmanifest"/>
-    <link rel="mask-icon" href="assets/htmledito/safari-pinned-tab.svg" color="#5bbad5"/>
-    <link rel="shortcut icon" href="assets/htmledito/favicon.ico"/>
-    <meta name="msapplication-config" content="assets/htmledito/browserconfig.xml"/>
-    <meta name="theme-color" content="#ffffff"/>
-    <meta name="apple-mobile-web-app-title" content="HTMLEdito"/>
-    <meta name="application-name" content="HTMLEdito"/>
-
-    <!-- Social -->
-    <meta property="og:title" content="HTMLEdito"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="assets/img/htmledito.png"/>
-    <meta property="og:site_name" content="HTMLEdito"/>
-    <meta property="og:locale" content="en"/>
-    <meta property="og:description" content="HTMLEdito is HTML Editor, CSS Editor and Javascript Editor script in one simple and user-friendly UI. It is build with HTML5, CSS3 and many javascript libraries"/>
-
-    <link href="assets/js/vendor/jquery.splitter/css/jquery.splitter.css" rel="stylesheet"/>
-    <!-- gray theme - splitter
-    <link href="assets/js/vendor/jquery.splitter/css/clean.jquery.splitter.css" rel="stylesheet"/> -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="assets/js/vendor/jquery.splitter/js/splitter.js"></script>
+    <script src="node_modules/jquery.splitter/js/jquery.splitter.js"></script>
+    <link href="node_modules/jquery.splitter/css/jquery.splitter.css" rel="stylesheet"/>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<script>
+jQuery(function($) {
+   $('#left_middle_widget').width('100%').height('100%').split({
+        orientation: 'vertical',
+        limit: 10,
+        position: '30%',
+        percent: true
+   });
+   $('#middle_right_widget').split({
+        orientation: 'vertical',
+        limit: 10,
+        position: '60%',
+        percent: true
+   });
+   $('#right_upper_lower_widget').split({
+        orientation: 'horizontal',
+        limit: 10,
+        position: '65%',
+        percent: true
+   });
+});
+</script>
+<style>
+    #lecture_overview {
+        background-color: red;
+    }
+    #code_editor {
+        background-color: blue;
+    }
+    #lecture_streaming {
+        background-color: aqua;
+    }
+    #lecture_chatt {
+        background-color: violet;
+    }
+</style>
+</head>
+<body>
+<header>
+    This is header
+</header>
 
-    <script src="node_modules/codemirror/lib/codemirror.js"></script>
-    <script src="node_modules/codemirror/mode/xml/xml.js"></script>
-    <script src="node_modules/codemirror/mode/javascript/javascript.js"></script>
-    <script src="node_modules/codemirror/mode/css/css.js"></script>
-    <script src="node_modules/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-    <script src="node_modules/codemirror/addon/selection/active-line.js"></script>
-    <script src="node_modules/codemirror/addon/edit/matchbrackets.js"></script>
-    <script src="node_modules/codemirror/addon/comment/continuecomment.js"></script>
-    <script src="node_modules/codemirror/addon/comment/comment.js"></script>
-    <script src="node_modules/codemirror/addon/edit/closetag.js"></script>
-    <script src="node_modules/codemirror/addon/edit/closebrackets.js"></script>
-    <script src="assets/js/vendor/emmet/emmet.js"></script>
-    <script src="node_modules/nprogress/nprogress.js"></script>
-
-    <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css"/>
-    <link rel="stylesheet" href="assets/css/app-htmledito.css">
-    <link href="node_modules/nprogress/nprogress.css" rel="stylesheet"/>
-
-    <!-- styles for HTMLEdito code highligter themes -->
-    <link rel="stylesheet" href="node_modules/codemirror/theme/blackboard.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/cobalt.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/eclipse.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/mbo.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/mdn-like.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/monokai.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/pastel-on-dark.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/rubyblue.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/the-matrix.css"/>
-    <link rel="stylesheet" href="node_modules/codemirror/theme/xq-light.css"/>
-    <script>
-    	jQuery(function($){
-    		NProgress.done(true);
-    	});
-    </script>
-    <script src="assets/js/vendor/dw_fontsizer/js/dw_event.js" type="text/javascript"></script>
-    <script src="assets/js/vendor/dw_fontsizer/js/dw_cookies.js" type="text/javascript"></script>
-    <script src="assets/js/vendor/dw_fontsizer/js/dw_sizerdx.js" type="text/javascript"></script>
-    <script>
-      dw_fontSizerDX.setDefaults("px", 13, 12, 26, ['div.CodeMirror'] );
-
-      dw_Event.add( window, 'load', dw_fontSizerDX.init );
-    </script>
-    <script>
-        $(function() {
-          $('ul.tab li').click(function() {
-            var activeTab = $(this).attr('data-tab');
-            $('ul.tab li').removeClass('current');
-            $('.tabcontent').removeClass('current');
-            $(this).addClass('current');
-            $('#' + activeTab).addClass('current');
-          })
-        });
-      </script>
-      <script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.3.1.js"></script>
-  </head>
-  <body>
-    <div id="loader"></div>
-
-    <header id="header" role="banner">
-      <div id="headermenu" role="navigation">
-        <div class="about">
-          <p><span class="brand"><span class="brand-span">HTML</span>Edito</span></p>
+<main id="content" class="article">
+    <div id="left_middle_widget">
+        <div id="lecture_overview">
         </div>
-        <div class="htmledito-settings">
-          <p class="theme-option"><span>Themes: </span>
-            <select onchange="selectTheme()" id=select>
-              <option selected>default</option>
-              <option>3024-day</option>
-              <option>blackboard</option>
-              <option>cobalt</option>
-              <option>eclipse</option>
-              <option>mbo</option>
-              <option>mdn-like</option>
-              <option>monokai</option>
-              <option>pastel-on-dark</option>
-              <option>rubyblue</option>
-              <option>the-matrix</option>
-              <option>xq-light</option>
-            </select>
-          </p>
-        </div>
-
-        <div class="font-sizer">
-          <span id="sizer">Font Size:&nbsp;&nbsp;<a class="increase" href="#" title="Increase text size"><img width="16" height="16" src="assets/js/vendor/dw_fontsizer/images/plus.png" alt="" /></a><a class="decrease" href="#" title="Decrease text size"><img width="16" height="16" src="assets/js/vendor/dw_fontsizer/images/minus.png" alt="" /></a><a class="reset" href="#" title="Restore default font-sizes"><img width="16" height="16" src="assets/js/vendor/dw_fontsizer/images/reset.png" alt="" /></a></span>
-        </div>
-        <div class="run-button">
-          <input type="button" value="Run (JS)" onClick="updatePreview();" id="runcodebutton" class="topmenubutton">
-        </div>
-
-        <div class="generatormenu">
-          <input type="button" value="Library"  id="librarymenubutton" class="topmenubutton">
-          <div id="librarymenu"  class="topmenu">
-            <div class="css-libraries">
-              <div>Text | Images | Audio | Video</div>
-              <input type="button" value="Lorem" id="generator-ipsum">
-              <input type="button" value="&lt;img src&gt; 1" id="insert-img-src1">
-              <input type="button" value="&lt;img src&gt; 2" id="insert-img-src2">
-              <input type="button" value="&lt;audio&gt;" id="insert-audio">
-              <input type="button" value="&lt;video&gt;" id="insert-video">
+        <div id="middle_right_widget">
+            <div id="code_editor"></div>
+            <div id="right_upper_lower_widget">
+                <div id="lecture_streaming"></div>
+                <div id="lecture_chatt"></div>
             </div>
 
-            <div class="css-libraries">
-              <div>CSS Libraries | CSS Framework</div>
-              <input type="button" value="url(image)" id="insert-url-img">
-              <!-- add custom CSS Library -->
-              <input type="button" value="normalize.css" id="normalizecss">
-              <!-- Bootstrap 3    // This is bootstrap library Example in library.js file-->
-              <input type="button" value="Bootstrap 3" id="bootstrap3">
-              <input type="button" value="Bootstrap 4" id="bootstrap4">
-              <input type="button" value="uikit 2" id="uikit2">
-              <input type="button" value="uikit 3" id="uikit3">
-              <br/>
-              <input type="button" value="foundation" id="foundation">
-              <input type="button" value="Bulma" id="bulma">
-              <input type="button" value="Materialize" id="materialize">
-              <input type="button" value="Semantic UI" id="semanticui">
-              <input type="button" value="MDL" id="mdl" title="Material Design Lite">
-              <input type="button" value="Font Awesome" id="fontawesome">
-            </div>
-
-            <div class="js-libraries jquery">
-              <div>JavaScript Libraries </div>
-              <!-- add custom Javascript Library -->
-              <input type="button" value="jQuery 1x" id="jquery1">
-              <input type="button" value="jQuery 2x" id="jquery2">
-              <input type="button" value="jQuery 3x" id="jquery3">
-              <input type="button" value="jQuery UI" id="jqueryui">
-              <input type="button" value="MooTools" id="MooTools">
-            </div>
-          </div>
-
-          <input type="button" value="Settings"  id="settingsmenubutton" class="topmenubutton">
-          <div id="settingsmenu"  class="topmenu">
-            <ul>
-              <li><input type="checkbox"  id="autopreviewcheckbox" checked="checked" /> Auto Run Js</li>
-              <li><input type="checkbox"  id="linewrappingcheckbox"/> Word Wrap</li>
-              <li><input type="checkbox"  id="autoclosetagscheckbox" checked="checked"/> Auto Close Tag</li>
-              <li><input type="checkbox"  id="layerpreview" /> Highlight Layer Mode</li>
-            </ul>
-          </div>
         </div>
-      </div>
-
-        <span class="select">
-        <label for="audioSource">Audio source: </label><select id="audioSource"></select>
-        </span>
-        <span class="select">
-        <label for="videoSource">Video source: </label><select id="videoSource"></select>
-        </span>
-
-      <div id="Dmenu-right">
-          <input type="button" id="previewcompact" value="&nbsp;" title="compact view" onClick="previewdefault();" />
-          <input type="button" id="previewnojs" value="&nbsp;" title="no js editor" onClick="nojsview();" />
-          <input type="text" value="" id="previewsizewidth" placeholder="Width" />
-          <input type="text" value="" id="previewsizeheight" placeholder="Height" />
-          <input type="button" id="fullpreview" value="&nbsp;" onClick="fullpreview();" />
-          <input type="button" id="previewtablet" value="&nbsp;" onClick="previewdefault();" />
-          <input type="button" id="previewphone-h" value="&nbsp;" onClick="previewdefault();" />
-          <input type="button" id="previewphone-w" value="&nbsp;" onClick="previewdefault();" />
-      </div>
-  </header>
-  <main id="content" class="article">
-    <div id="widget">
-      <div id="foo">
-        <div id="codehtml">
-          <div class="codetypelabel" id="codetypelabelhtml">HTML</div>
-          <textarea id="codeeditorhtml" name="codeeditorhtml">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1 id=&quot;heading&quot;&gt;HTML&lt;/h1&gt;
-
-    &lt;p contenteditable=&quot;true&quot;&gt;Welcome to HTMLEdito&lt;/p&gt;
-    &lt;p contenteditable=&quot;true&quot;&gt;Online HTML, CSS and JavaScript editor with live preview.&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</textarea>
-        </div>
-
-        <!-- <div id="codecss">
-          <div class="codetypelabel" id="codetypelabelcss">CSS</div>
-          <textarea id="codeeditorcss" name="codeeditorcss">
-/* CSS code */
-
-h1 {
-  font-family: Arial,sans-serif;
-  color: tomato;
-}
-          </textarea>
-        </div> -->
-        
-        <div id="middle_code">
-          <div id="codecss">
-            <div class="codetypelabel" id="codetypelabelcss">CSS</div>
-            <textarea id="codeeditorcss" name="codeeditorcss">
-This is Css
-            </textarea>
-          </div>
-          <div id="codejs">
-            <div class="codetypelabel" id="codetypelabeljs">JavaScript</div>
-            <textarea id="codeeditorjs" name="codeeditorjs">This is test</textarea>
-          </div>
-        </div>
-
-      </div>
-      <div id="bar">
-        <div id="codepreview">
-          <div id="previewmask"></div>
-          <div id="previewoutputsize">Output: <span id="outputsizenumber"></span></div>
-          <iframe id="preview" sandbox="allow-scripts allow-same-origin"></iframe>
-        </div>
-        <div id="rtc_communication">
-            <div id="container">
-                <ul class="tab">
-                  <li class="current" data-tab="tab1"><a href="#">Today's examples</a></li>
-                  <li data-tab="tab2"><a href="#">FlowChart</a></li>
-                  <li data-tab="tab3"><a href="#">Agora</a></li>
-                </ul>
-            
-                <div id="tab1" class="tabcontent current">
-                  <h3>Let's make a log-in page.</h3>
-                  <p><img src="https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/Simple_Login_Form_Flat_UI.png" width="400px" allign="left"></p>
-                  <p>You need to use edittext for id input. Passwords should not be seen.</p>
-                </div>
-            
-                <div id="tab2" class="tabcontent">
-                  <h3>Flowchart</h3>
-                  <p>This is Tab 2.</p>
-                </div>
-            
-                <div id="tab3" class="tabcontent">
-                  <div id="video" style="margin:0 auto;">
-                    <div id="agora_local" style="width:100%; height: 100%;"></div>
-                  </div>
-                </div>
-              </div>
-        </div>
-      </div>
     </div>
-  </main>
+</main>
 
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/library.js"></script>
-  <script>
-        var HideMenuDialog = function(){
-      $('#librarymenu').hide();
-      $('#settingsmenu').hide();
-    }
-        $('textarea')
-            .focus(HideMenuDialog)
-  </script>
+<footer>
+    <p>This is footer</p>
+</footer>
 
-  <script language="javascript">
-
-    if(!AgoraRTC.checkSystemRequirements()) {
-      alert("browser is no support webRTC");
-    }
-  
-  /* select Log type */
-  // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.NONE);
-  // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.ERROR);
-  // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.WARNING);
-  // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);  
-  // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.DEBUG);
-  
-    /* simulated data to proof setLogLevel() */
-    AgoraRTC.Logger.error('this is error');
-    AgoraRTC.Logger.warning('this is warning');
-    AgoraRTC.Logger.info('this is info');
-    AgoraRTC.Logger.debug('this is debug');
-
-    var client, localStream, camera, microphone;
-  
-  var audioSelect = document.querySelector('select#audioSource');
-  var videoSelect = document.querySelector('select#videoSource');
-  
-  function join() {
-    document.getElementById("video").disabled = true;
-    var channel_key = null;
-  
-    console.log("Init AgoraRTC client with vendor key: " + "6fb78b7e9e60479ea3e75e15e7b52fec");
-    client = AgoraRTC.createClient({mode: 'interop'});
-    client.init("6fb78b7e9e60479ea3e75e15e7b52fec", function () {
-      console.log("AgoraRTC client initialized");
-      client.join(channel_key, "1000", null, function(uid) {
-        console.log("User " + uid + " join channel successfully");
-  
-        if (document.getElementById("video").checked) {
-          camera = videoSource.value;
-          microphone = audioSource.value;
-          localStream = AgoraRTC.createStream({streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: document.getElementById("video").checked, screen: false});
-          //localStream = AgoraRTC.createStream({streamID: uid, audio: false, cameraId: camera, microphoneId: microphone, video: false, screen: true, extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'});
-          if (document.getElementById("video").checked) {
-            localStream.setVideoProfile('720p_3'); 
-          }
-  
-          // The user has granted access to the camera and mic.
-          localStream.on("accessAllowed", function() {
-            console.log("accessAllowed");
-          });
-  
-          // The user has denied access to the camera and mic.
-          localStream.on("accessDenied", function() {
-            console.log("accessDenied");
-          });
-  
-          localStream.init(function() {
-            console.log("getUserMedia successfully");
-            localStream.play('agora_local');
-  
-            client.publish(localStream, function (err) {
-              console.log("Publish local stream error: " + err);
-            });
-  
-            client.on('stream-published', function (evt) {
-              console.log("Publish local stream successfully");
-            });
-          }, function (err) {
-            console.log("getUserMedia failed", err);
-          });
-        }
-      }, function(err) {
-        console.log("Join channel failed", err);
-      });
-    }, function (err) {
-      console.log("AgoraRTC client init failed", err);
-    });
-  
-    channelKey = "";
-    client.on('error', function(err) {
-      console.log("Got error msg:", err.reason);
-      if (err.reason === 'DYNAMIC_KEY_TIMEOUT') {
-        client.renewChannelKey(channelKey, function(){
-          console.log("Renew channel key successfully");
-        }, function(err){
-          console.log("Renew channel key failed: ", err);
-        });
-      }
-    });
-  
-  
-    client.on('stream-added', function (evt) {
-      var stream = evt.stream;
-      console.log("New stream added: " + stream.getId());
-      console.log("Subscribe ", stream);
-      client.subscribe(stream, function (err) {
-        console.log("Subscribe stream failed", err);
-      });
-    });
-  
-    client.on('stream-subscribed', function (evt) {
-      var stream = evt.stream;
-      console.log("Subscribe remote stream successfully: " + stream.getId());
-      if ($('div#video #agora_remote'+stream.getId()).length === 0) {
-        $('div#video').append('<div id="agora_remote'+stream.getId()+'" style="width:100%;height:200px;display:inline-block;"></div>');
-      }
-      stream.play('agora_remote' + stream.getId());
-      console.log("test");
-        var agora_remote = $('div#video').children().first().next();
-        console.log(agora_remote);
-        agora_remote = agora_remote.children().first().children().first();
-        $(agora_remote).css('position', '');
-        console.log(agora_remote);
-
-    });
-  
-    client.on('stream-removed', function (evt) {
-      var stream = evt.stream;
-      stream.stop();
-      $('#agora_remote' + stream.getId()).remove();
-      console.log("Remote stream is removed " + stream.getId());
-    });
-  
-    client.on('peer-leave', function (evt) {
-      var stream = evt.stream;
-      if (stream) {
-        stream.stop();
-        $('#agora_remote' + stream.getId()).remove();
-        console.log(evt.uid + " leaved from this channel");
-      }
-    });
-  }
-  
-  function leave() {
-    document.getElementById("leave").disabled = true;
-    client.leave(function () {
-      console.log("Leavel channel successfully");
-    }, function (err) {
-      console.log("Leave channel failed");
-    });
-  }
-  
-  function publish() {
-    document.getElementById("publish").disabled = true;
-    document.getElementById("unpublish").disabled = false;
-    client.publish(localStream, function (err) {
-      console.log("Publish local stream error: " + err);
-    });
-  }
-  
-  function unpublish() {
-    document.getElementById("publish").disabled = false;
-    document.getElementById("unpublish").disabled = true;
-    client.unpublish(localStream, function (err) {
-      console.log("Unpublish local stream failed" + err);
-    });
-  }
-  
-  function getDevices() {
-    AgoraRTC.getDevices(function (devices) {
-      for (var i = 0; i !== devices.length; ++i) {
-        var device = devices[i];
-        var option = document.createElement('option');
-        option.value = device.deviceId;
-        if (device.kind === 'audioinput') {
-          option.text = device.label || 'microphone ' + (audioSelect.length + 1);
-          audioSelect.appendChild(option);
-        } else if (device.kind === 'videoinput') {
-          option.text = device.label || 'camera ' + (videoSelect.length + 1);
-          videoSelect.appendChild(option);
-        } else {
-          console.log('Some other kind of source/device: ', device);
-        }
-      }
-    });
-  }
-  
-    //audioSelect.onchange = getDevices;
-    //videoSelect.onchange = getDevices;
-    getDevices();
-    join();
-  </script>
-  </body>
+</body>
 </html>
