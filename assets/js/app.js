@@ -278,10 +278,10 @@ if (choice) {
     codeeditorjs.setOption("theme", theme)
 }
 var $win = $(window);
-$(window).load(function() {
+$(window).on('load', function() {
     $("#loader").fadeOut()
 });
-$(window).unload(function() {
+$(window).on('unload', function() {
     $("#loader").fadeIn()
 });
 jQuery(function(e) {
