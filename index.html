@@ -38,36 +38,35 @@
                 "linkFromPortIdProperty": "fromPort",
                 "linkToPortIdProperty": "toPort",
                 "nodeDataArray": [
-                    { "category": "Comment", "loc": "360 -10", "text": "Kookie Brittle", "key": -13 },
-                    { "key": -1, "category": "Start", "loc": "175 0", "text": "Start" },
-                    { "key": 0, "loc": "-5 75", "text": "Preheat oven to 375 F" },
+                    {"key": -1, "category": "Start", "loc": "175 0", "text": "Start"},
+                    {"key": 0, "loc": "50 75", "text": "Preheat oven to 375 F"},
                     {
                         "key": 1,
                         "loc": "175 100",
                         "text": "In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"
                     },
-                    { "key": 2, "loc": "175 200", "text": "Gradually beat in 1 cup sugar and 2 cups sifted flour" },
-                    { "key": 3, "loc": "175 290", "text": "Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels" },
-                    { "key": 4, "loc": "175 380", "text": "Press evenly into ungreased 15x10x1 pan" },
-                    { "key": 5, "loc": "355 85", "text": "Finely chop 1/2 cup of your choice of nuts" },
-                    { "key": 6, "loc": "175 450", "text": "Sprinkle nuts on top" },
-                    { "key": 7, "loc": "175 515", "text": "Bake for 25 minutes and let cool" },
-                    { "key": 8, "loc": "175 585", "text": "Cut into rectangular grid" },
-                    { "key": -2, "category": "End", "loc": "175 660", "text": "Enjoy!" }
+                    {"key": 2, "loc": "175 200", "text": "Gradually beat in 1 cup sugar and 2 cups sifted flour"},
+                    {"key": 3, "loc": "175 290", "text": "Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
+                    {"key": 4, "loc": "175 380", "text": "Press evenly into ungreased 15x10x1 pan"},
+                    {"key": 5, "loc": "300 85", "text": "Finely chop 1/2 cup of your choice of nuts"},
+                    {"key": 6, "loc": "175 450", "text": "Sprinkle nuts on top"},
+                    {"key": 7, "loc": "175 515", "text": "Bake for 25 minutes and let cool"},
+                    {"key": 8, "loc": "175 585", "text": "Cut into rectangular grid"},
+                    {"key": -2, "category": "End", "loc": "175 660", "text": "Enjoy!"}
                 ],
                 "linkDataArray": [
-                    { "from": 1, "to": 2, "fromPort": "B", "toPort": "T" },
-                    { "from": 2, "to": 3, "fromPort": "B", "toPort": "T" },
-                    { "from": 3, "to": 4, "fromPort": "B", "toPort": "T" },
-                    { "from": 4, "to": 6, "fromPort": "B", "toPort": "T" },
-                    { "from": 6, "to": 7, "fromPort": "B", "toPort": "T" },
-                    { "from": 7, "to": 8, "fromPort": "B", "toPort": "T" },
-                    { "from": 8, "to": -2, "fromPort": "B", "toPort": "T" },
-                    { "from": -1, "to": 0, "fromPort": "B", "toPort": "T" },
-                    { "from": -1, "to": 1, "fromPort": "B", "toPort": "T" },
-                    { "from": -1, "to": 5, "fromPort": "B", "toPort": "T" },
-                    { "from": 5, "to": 4, "fromPort": "B", "toPort": "T" },
-                    { "from": 0, "to": 4, "fromPort": "B", "toPort": "T" }
+                    {"from": 1, "to": 2, "fromPort": "B", "toPort": "T"},
+                    {"from": 2, "to": 3, "fromPort": "B", "toPort": "T"},
+                    {"from": 3, "to": 4, "fromPort": "B", "toPort": "T"},
+                    {"from": 4, "to": 6, "fromPort": "B", "toPort": "T"},
+                    {"from": 6, "to": 7, "fromPort": "B", "toPort": "T"},
+                    {"from": 7, "to": 8, "fromPort": "B", "toPort": "T"},
+                    {"from": 8, "to": -2, "fromPort": "B", "toPort": "T"},
+                    {"from": -1, "to": 0, "fromPort": "B", "toPort": "T"},
+                    {"from": -1, "to": 1, "fromPort": "B", "toPort": "T"},
+                    {"from": -1, "to": 5, "fromPort": "B", "toPort": "T"},
+                    {"from": 5, "to": 4, "fromPort": "B", "toPort": "T"},
+                    {"from": 0, "to": 4, "fromPort": "B", "toPort": "T"}
                 ]
             }
             // 이거필요
@@ -141,7 +140,7 @@
 
             function textStyle() {
                 return {
-                    font: "bold 11pt Helvetica, Arial, sans-serif",
+                    font: "bold 10pt Helvetica, Arial, sans-serif",
                     stroke: "whitesmoke"
                 }
             }
@@ -157,8 +156,8 @@
                             new go.Binding("figure", "figure")),
                         $(go.TextBlock, textStyle(),
                             {
-                                margin: 8,
-                                maxSize: new go.Size(160, NaN),
+                                margin: 5,
+                                maxSize: new go.Size(100, NaN),
                                 wrap: go.TextBlock.WrapFit,
                                 editable: true
                             },
@@ -301,18 +300,15 @@
             <label for="videoSource">Video source: </label>
             <select id="videoSource"></select>
           </div>
-          <div id="div_join" class="panel panel-default">
-            <div class="panel-body">
-              Key: <input id="key" type="text" value="" size="36" />
-              Channel: <input id="channel" type="text" value="1000" size="4" />
-              Host: <input id="video" type="checkbox" checked />
-              <button id="join" class="btn btn-primary" onclick="join()">Join</button>
-              <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
-              <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
-              <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
-            </div>
-          </div>
         </ul>
+        <div id="div_join" class="panel panel-default" style="float:right;" >
+          <div class="panel-body" >
+            <button id="join" class="btn btn-primary" onclick="join()" >Join</button>
+            <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
+            <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
+            <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -364,7 +360,7 @@
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#lecture_overview">
             <div style="width: 100%; display: flex; justify-content: space-between">
-              <div id="myDiagramDiv_flowchart" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
+              <div id="myDiagramDiv_flowchart" style="flex-grow: 1; width: 100%; height: 700px; border: solid 1px black"></div>
             </div>
           </div>
         </div>
@@ -401,12 +397,10 @@
             </div>
           </div>
         </div>
-        <div id="right_upper_lower_widget">
-          <div id="lecture_streaming">
-            <p>agora streaming</p>
-          </div>
+        <div id="right_upper_lower_widget" >
+            <div id="video" style="margin:0 auto;"></div>
           <div id="lecture_chatt">
-            <p>chatting view or other</p>
+            <div id="agora_local" style="float:right;width:100% ;height:100%;display:inline-block;"></div>
           </div>
         </div>
       </div>
@@ -417,8 +411,183 @@
     <p>This is footer</p>
   </footer>
 
+  <script language="javascript">
 
-  <script src="assets/js/agora.js"></script>
+      if(!AgoraRTC.checkSystemRequirements()) {
+          alert("browser is no support webRTC");
+      }
+
+      /* select Log type */
+      // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.NONE);
+      // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.ERROR);
+      // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.WARNING);
+      // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.INFO);
+      // AgoraRTC.Logger.setLogLevel(AgoraRTC.Logger.DEBUG);
+
+      /* simulated data to proof setLogLevel() */
+      AgoraRTC.Logger.error('this is error');
+      AgoraRTC.Logger.warning('this is warning');
+      AgoraRTC.Logger.info('this is info');
+      AgoraRTC.Logger.debug('this is debug');
+
+      var client, localStream, camera, microphone;
+
+      var audioSelect = document.querySelector('select#audioSource');
+      var videoSelect = document.querySelector('select#videoSource');
+
+      function join() {
+          document.getElementById("join").disabled = true;
+          document.getElementById("video").disabled = true;
+          var channel_key = null;
+          var key_value = "517fcf74439040fa8f1d9a979df65338";
+          var channel_value = "1000";
+
+          console.log("Init AgoraRTC client with vendor key: " + key_value);
+          client = AgoraRTC.createClient({mode: 'interop'});
+          client.init(key_value, function () {
+              console.log("AgoraRTC client initialized");
+              client.join(channel_key, channel_value, null, function(uid) {
+                  console.log("User " + uid + " join channel successfully");
+
+                  if (true) {
+                      camera = videoSource.value;
+                      microphone = audioSource.value;
+                      localStream = AgoraRTC.createStream({streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: true, screen: false});
+                      //localStream = AgoraRTC.createStream({streamID: uid, audio: false, cameraId: camera, microphoneId: microphone, video: false, screen: true, extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'});
+                      if (true) {
+                          localStream.setVideoProfile('720p_3');
+
+                      }
+
+                      // The user has granted access to the camera and mic.
+                      localStream.on("accessAllowed", function() {
+                          console.log("accessAllowed");
+                      });
+
+                      // The user has denied access to the camera and mic.
+                      localStream.on("accessDenied", function() {
+                          console.log("accessDenied");
+                      });
+
+                      localStream.init(function() {
+                          console.log("getUserMedia successfully");
+                          localStream.play('agora_local');
+
+                          client.publish(localStream, function (err) {
+                              console.log("Publish local stream error: " + err);
+                          });
+
+                          client.on('stream-published', function (evt) {
+                              console.log("Publish local stream successfully");
+                          });
+                      }, function (err) {
+                          console.log("getUserMedia failed", err);
+                      });
+                  }
+              }, function(err) {
+                  console.log("Join channel failed", err);
+              });
+          }, function (err) {
+              console.log("AgoraRTC client init failed", err);
+          });
+
+          channelKey = "";
+          client.on('error', function(err) {
+              console.log("Got error msg:", err.reason);
+              if (err.reason === 'DYNAMIC_KEY_TIMEOUT') {
+                  client.renewChannelKey(channelKey, function(){
+                      console.log("Renew channel key successfully");
+                  }, function(err){
+                      console.log("Renew channel key failed: ", err);
+                  });
+              }
+          });
+
+
+          client.on('stream-added', function (evt) {
+              var stream = evt.stream;
+              console.log("New stream added: " + stream.getId());
+              console.log("Subscribe ", stream);
+              client.subscribe(stream, function (err) {
+                  console.log("Subscribe stream failed", err);
+              });
+          });
+
+          client.on('stream-subscribed', function (evt) {
+              var stream = evt.stream;
+              console.log("Subscribe remote stream successfully: " + stream.getId());
+              if ($('div#video #agora_remote'+stream.getId()).length === 0) {
+                  $('div#video').append('<div id="agora_remote'+stream.getId()+'" style="float:left; width:100%;height:100%;display:inline-block;"></div>');
+              }
+              stream.play('agora_remote' + stream.getId());
+          });
+
+          client.on('stream-removed', function (evt) {
+              var stream = evt.stream;
+              stream.stop();
+              $('#agora_remote' + stream.getId()).remove();
+              console.log("Remote stream is removed " + stream.getId());
+          });
+
+          client.on('peer-leave', function (evt) {
+              var stream = evt.stream;
+              if (stream) {
+                  stream.stop();
+                  $('#agora_remote' + stream.getId()).remove();
+                  console.log(evt.uid + " leaved from this channel");
+              }
+          });
+      }
+
+      function leave() {
+          document.getElementById("leave").disabled = true;
+          client.leave(function () {
+              console.log("Leavel channel successfully");
+          }, function (err) {
+              console.log("Leave channel failed");
+          });
+      }
+
+      function publish() {
+          document.getElementById("publish").disabled = true;
+          document.getElementById("unpublish").disabled = false;
+          client.publish(localStream, function (err) {
+              console.log("Publish local stream error: " + err);
+          });
+      }
+
+      function unpublish() {
+          document.getElementById("publish").disabled = false;
+          document.getElementById("unpublish").disabled = true;
+          client.unpublish(localStream, function (err) {
+              console.log("Unpublish local stream failed" + err);
+          });
+      }
+
+      function getDevices() {
+          AgoraRTC.getDevices(function (devices) {
+              for (var i = 0; i !== devices.length; ++i) {
+                  var device = devices[i];
+                  var option = document.createElement('option');
+                  option.value = device.deviceId;
+                  if (device.kind === 'audioinput') {
+                      option.text = device.label || 'microphone ' + (audioSelect.length + 1);
+                      audioSelect.appendChild(option);
+                  } else if (device.kind === 'videoinput') {
+                      option.text = device.label || 'camera ' + (videoSelect.length + 1);
+                      videoSelect.appendChild(option);
+                  } else {
+                      console.log('Some other kind of source/device: ', device);
+                  }
+              }
+          });
+      }
+
+      //audioSelect.onchange = getDevices;
+      //videoSelect.onchange = getDevices;
+      getDevices();
+  </script>
+
   <script src="node_modules/monaco-editor/min/vs/loader.js"></script>
   <script>
     var html_editor;
