@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server --port=8083"
+    "start": "http-server -p 8083"
   },
   "repository": {
     "type": "git",
