@@ -14,7 +14,7 @@ jQuery(function ($) {
   $('#right_upper_lower_widget').split({
     orientation: 'horizontal',
     limit: 10,
-    position: '35%',
+    position: '50%',
     percent: true
   });
 });
