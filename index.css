@@ -28,10 +28,6 @@ footer {
     height: 100%;
 }
 
-#code_editor {
-    height: auto;
-}
-
 #code_editor_tab {
     margin: 0px 5px 0px 5px; /* top right bottom left */
 }
@@ -44,13 +40,16 @@ footer {
     width: 100%;
 }
 
-.tab-content, #html_content {
+.tab-content, #html_content, #css_content, #javascript_content {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
 }
 
-#css_content, #javascript_content {
-    background-color: red;
+.iframe_editor {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
