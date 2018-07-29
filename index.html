@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <title>MakerMaker - Lecutre</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="5.png">
     <meta name="Description" content="jQuery Splitter Demo" />
     <link rel="shortcut icon" href="" />
 
@@ -210,7 +212,7 @@
                                         {fill: "#00A9C9", strokeWidth: 0},
                                         new go.Binding("figure", "figure")),
                                     $(go.TextBlock, textStyle(),
-                                        {
+                                        {f
                                             margin: 8,
                                             maxSize: new go.Size(160, NaN),
                                             wrap: go.TextBlock.WrapFit,
@@ -315,7 +317,9 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">
+                <img src="top logo.png" alt="#" height="55px">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -323,38 +327,28 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <div class="select">
                         <label for="audioSource">Audio source: </label>
                         <select id="audioSource"></select>
-                    </li>
-                    <li class="nav-item">
+                    </div>
+                    <div class="select">
                         <label for="videoSource">Video source: </label>
                         <select id="videoSource"></select>
-                    </li>
-                    <li class="nav-item">
-                        Key:
-                        <input id="key" type="text" value="" size="36"></input>
-                    </li>
-                    <li class="nav-item">
-                        Channel:
-                        <input id="channel" type="text" value="1000" size="4"></input>
-                    </li>
-                    <li class="nav-item">
-                        Host:
-                        <input id="video" type="checkbox" checked></input>
-                    </li>
-                    <li class="nav-item">
-                        <button id="join" class="btn btn-primary" onclick="join()">Join</button>
-                    </li>
-                    <li class="nav-item">
-                        <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
-                    </li>
-                    <li class="nav-item">
-                        <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
-                    </li>
-                    <li class="nav-item">
-                        <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
-                    </li>
+                    </div>
+                    <div id="div_join" class="panel panel-default">
+                        <div class="panel-body">
+                            Key:
+                            <input id="key" type="text" value="" size="36"></input>
+                            Channel:
+                            <input id="channel" type="text" value="1000" size="4"></input>
+                            Host:
+                            <input id="video" type="checkbox" checked></input>
+                            <button id="join" class="btn btn-primary" onclick="join()">Join</button>
+                            <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
+                            <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
+                            <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </nav>
