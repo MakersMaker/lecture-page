@@ -68,9 +68,8 @@ jQuery(function($) {
                 "linkFromPortIdProperty": "fromPort",
                 "linkToPortIdProperty": "toPort",
                 "nodeDataArray": [
-                    {"category": "Comment", "loc": "360 -10", "text": "Kookie Brittle", "key": -13},
                     {"key": -1, "category": "Start", "loc": "175 0", "text": "Start"},
-                    {"key": 0, "loc": "-5 75", "text": "Preheat oven to 375 F"},
+                    {"key": 0, "loc": "50 75", "text": "Preheat oven to 375 F"},
                     {
                         "key": 1,
                         "loc": "175 100",
@@ -79,7 +78,7 @@ jQuery(function($) {
                     {"key": 2, "loc": "175 200", "text": "Gradually beat in 1 cup sugar and 2 cups sifted flour"},
                     {"key": 3, "loc": "175 290", "text": "Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
                     {"key": 4, "loc": "175 380", "text": "Press evenly into ungreased 15x10x1 pan"},
-                    {"key": 5, "loc": "355 85", "text": "Finely chop 1/2 cup of your choice of nuts"},
+                    {"key": 5, "loc": "300 85", "text": "Finely chop 1/2 cup of your choice of nuts"},
                     {"key": 6, "loc": "175 450", "text": "Sprinkle nuts on top"},
                     {"key": 7, "loc": "175 515", "text": "Bake for 25 minutes and let cool"},
                     {"key": 8, "loc": "175 585", "text": "Cut into rectangular grid"},
@@ -171,7 +170,7 @@ jQuery(function($) {
 
             function textStyle() {
                 return {
-                    font: "bold 11pt Helvetica, Arial, sans-serif",
+                    font: "bold 10pt Helvetica, Arial, sans-serif",
                     stroke: "whitesmoke"
                 }
             }
@@ -187,8 +186,8 @@ jQuery(function($) {
                             new go.Binding("figure", "figure")),
                         $(go.TextBlock, textStyle(),
                             {
-                                margin: 8,
-                                maxSize: new go.Size(160, NaN),
+                                margin: 5,
+                                maxSize: new go.Size(100, NaN),
                                 wrap: go.TextBlock.WrapFit,
                                 editable: true
                             },
@@ -371,7 +370,7 @@ jQuery(function($) {
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#lecture_overview">
                     <div style="width: 100%; display: flex; justify-content: space-between">
-                        <div id="myDiagramDiv_flowchart" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
+                        <div id="myDiagramDiv_flowchart" style="width: 100%; height: 700px; border: solid 1px black"></div>
                     </div>
                 </div>
             </div>
