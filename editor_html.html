@@ -36,16 +36,21 @@
                     '\t<meta http-equiv="X-UA-Compatible" content="ie=edge">\n' +
                     '\t<title>Document</title>\n' +
                     '</head>\n\n' +
-                    '<body>\n' + 
+                    '<body>\n' +
+                    '<p>Hello World</p>' +
                     '</body>\n\n' +
                     '</html>\n'
                 ].join('\n'),
                 language: 'html'
             });
+
     
             window.onresize = function() {
                 editor.layout();
             };
+            
+            console.log(editor.getModel().getValue());
+            
         });
     </script>
 </body>

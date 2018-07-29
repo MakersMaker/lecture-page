@@ -2,49 +2,29 @@
 <html lang="ko">
 
 <head>
-    <meta charset="utf-8" />
-    <title>MakerMaker - Lecutre</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="5.png">
-    <meta name="Description" content="jQuery Splitter Demo" />
-    <link rel="shortcut icon" href="" />
+  <meta charset="utf-8" />
+  <title>MakerMaker - Lecutre</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="5.png">
+  <meta name="Description" content="jQuery Splitter Demo" />
+  <link rel="shortcut icon" href="" />
 
-    <link href="node_modules/jquery.splitter/css/jquery.splitter.css" rel="stylesheet" />
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href="node_modules/jquery.splitter/css/jquery.splitter.css" rel="stylesheet" />
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index.css">
 
-    <script src="assets/js/go.js"></script>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/jquery.splitter/js/jquery.splitter.js"></script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.3.1.js"></script>
+  <script src="assets/js/go.js"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/jquery.splitter/js/jquery.splitter.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/splitter/splitter.js"></script>
+  <script src="https://cdn.agora.io/sdk/web/AgoraRTCSDK-2.3.1.js"></script>
 
-    <!--[if IE]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <script>
-        jQuery(function ($) {
-            $('#left_middle_widget').width('100%').height('100%').split({
-                orientation: 'vertical',
-                limit: 10,
-                position: '30%',
-                percent: true
-            });
-            $('#middle_right_widget').split({
-                orientation: 'vertical',
-                limit: 10,
-                position: '60%',
-                percent: true
-            });
-            $('#right_upper_lower_widget').split({
-                orientation: 'horizontal',
-                limit: 10,
-                position: '35%',
-                percent: true
-            });
-        });
-    </script>
+  <!--[if IE]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
     <style>
         #lecture_overview {}
 
@@ -434,13 +414,13 @@
                     </ul>
                     <div class="tab-content" id="code_editor_tab_content">
                         <div class="tab-pane fade show active" id="html_content" role="tabpanel" aria-labelledby="html_content">
-                            <iframe id="code_editor_html" src="editor_html.html" class="iframe_editor"></iframe>
+                          <div id="container_html" class="container-code"></div>
                         </div>
                         <div class="tab-pane fade" id="css_content" role="css_content" aria-labelledby="css_content">
                             <iframe id="code_editor_css" src="editor_css.html" class="iframe_editor"></iframe>
                         </div>
                         <div class="tab-pane fade" id="javascript_content" role="javascript_content" aria-labelledby="javascript_content">
-                            <iframe id="code_editor_css" src="editor_js.html" class="iframe_editor"></iframe>
+                            <iframe id="code_editor_js" src="editor_js.html" class="iframe_editor"></iframe>
                         </div>
                         <div class="tab-pane fade" id="preview_content" role="preview_content" aria-labelledby="preview_content">This is preview</div>
                     </div>
@@ -463,7 +443,34 @@
     </footer>
 
 
-    <script src="assets/js/agora.js"></script>
+  <script src="assets/js/agora.js"></script>
+  <script src="node_modules/monaco-editor/min/vs/loader.js"></script>
+  <script>
+    require.config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' }});
+    require(['vs/editor/editor.main'], function() {
+      var editor = monaco.editor.create(document.getElementById('container_html'), {
+        value: [
+          '<!DOCTYPE html>\n' +
+          '<html lang="en">\n' +
+          '<head>\n' +
+          '\t<meta charset="UTF-8">\n' +
+          '\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+          '\t<meta http-equiv="X-UA-Compatible" content="ie=edge">\n' +
+          '\t<title>Document</title>\n' +
+          '</head>\n\n' +
+          '<body>\n' +
+          '<p>Hello World</p>' +
+          '</body>\n\n' +
+          '</html>\n'
+        ].join('\n'), language: 'html'
+      });
+
+      window.onresize = function() {
+        editor.layout();
+      };
+      console.log(editor.getModel().getValue());
+    });
+  </script>
 </body>
 
 </html>
