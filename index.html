@@ -25,23 +25,10 @@
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-    <style>
-        #lecture_overview {}
-
-        #code_editor {}
-
-        #lecture_streaming {
-            background-color: aqua;
-        }
-
-        #lecture_chatt {
-            background-color: violet;
-        }
-    </style>
-
+  <link rel="stylesheet" href="assets/js/vendor/splitter/splitter.css">
 </head>
-<script id="code">
 
+<script id="code">
     flag = true;
     function init() {
 
@@ -295,160 +282,150 @@
 </script>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="top logo.png" alt="#" height="55px">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="top logo.png" alt="#" height="55px">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <div class="select">
-                        <label for="audioSource">Audio source: </label>
-                        <select id="audioSource"></select>
-                    </div>
-                    <div class="select">
-                        <label for="videoSource">Video source: </label>
-                        <select id="videoSource"></select>
-                    </div>
-                    <div id="div_join" class="panel panel-default">
-                        <div class="panel-body">
-                            Key:
-                            <input id="key" type="text" value="" size="36"></input>
-                            Channel:
-                            <input id="channel" type="text" value="1000" size="4"></input>
-                            Host:
-                            <input id="video" type="checkbox" checked></input>
-                            <button id="join" class="btn btn-primary" onclick="join()">Join</button>
-                            <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
-                            <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
-                            <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
-                        </div>
-                    </div>
-                </ul>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <div class="select">
+            <label for="audioSource">Audio source: </label>
+            <select id="audioSource"></select>
+          </div>
+          <div class="select">
+            <label for="videoSource">Video source: </label>
+            <select id="videoSource"></select>
+          </div>
+          <div id="div_join" class="panel panel-default">
+            <div class="panel-body">
+              Key: <input id="key" type="text" value="" size="36" />
+              Channel: <input id="channel" type="text" value="1000" size="4" />
+              Host: <input id="video" type="checkbox" checked />
+              <button id="join" class="btn btn-primary" onclick="join()">Join</button>
+              <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
+              <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
+              <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
             </div>
-        </nav>
-    </header>
+          </div>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <main id="content" class="article">
-        <div id="left_middle_widget">
-            <div id="lecture_overview">
-                <div class="card">
-                    <div class="card-header" id="headingOne">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Today's Topic
-                            </button>
-                        </h5>
-                    </div>
+  <main id="content" class="article">
+    <div id="left_middle_widget">
+      <div id="lecture_overview">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Today's Topic</button>
+            </h5>
+          </div>
 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#lecture_overview">
-                        <div class="card-body">
-                            <img src="https://www.shareicon.net/data/256x256/2016/06/07/777351_multimedia_512x512.png">
-                            <h5>Log-in </h5>
-                            Log-in is one of the most impoortant part in making your own online shopping mall. From the Log-in part, everything for online
-                            shopping mall starts. You can't buy or sell products without log-in part. Log-in part is the
-                            most important part, but it is also hard to implement. But, It is not that difficult if you make
-                            it step-by-step. Then, Let's make the Log-in part from now!
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Today's Example
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#lecture_overview">
-                        <div class="card-body">
-                            <img src="https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/Simple_Login_Form_Flat_UI.png" width="400px" allign="left">
-                            </p>
-                            <h5>You should make a simple Log-in part with HTML, CSS, and Javascript.</h5>
-                            01. You should use text input box for ID and passwords.
-                            <br> 02. Passwords should be hidden.
-                            <br> 03. When you click log-in button, data set for ID and passwords will be send to a server.
-                            <br> 04. 'Lost your password?' button is needed.
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link collapsed" onclick="init();" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                                aria-controls="collapseTwo">
-                                Flow Chart of Today's Example
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#lecture_overview">
-                        <div style="width: 100%; display: flex; justify-content: space-between">
-                            <div id="myDiagramDiv_flowchart" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
-                        </div>
-                    </div>
-                </div>
-
-
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#lecture_overview">
+            <div class="card-body">
+              <img src="https://www.shareicon.net/data/256x256/2016/06/07/777351_multimedia_512x512.png">
+              <h5>Log-in</h5>
+              Log-in is one of the most impoortant part in making your own online shopping mall. From the Log-in part, everything for online
+              shopping mall starts. You can't buy or sell products without log-in part. Log-in part is the
+              most important part, but it is also hard to implement. But, It is not that difficult if you make
+              it step-by-step. Then, Let's make the Log-in part from now!
             </div>
-            <div id="middle_right_widget">
-                <div id="code_editor">
-                    <ul class="nav nav-tabs" id="code_editor_tab" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="html-tab" data-toggle="tab" href="#html_content" role="tab" aria-controls="html" aria-selected="true">HTML</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="css-tab" data-toggle="tab" href="#css_content" role="tab" aria-controls="css" aria-selected="false">CSS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="javascript-tab" data-toggle="tab" href="#javascript_content" role="tab" aria-controls="javascript"
-                                aria-selected="false">Javascript</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview_content" role="tab" aria-controls="preview" aria-selected="false">Preview</a>
-                        </li>
-                    </ul>
-                    <div class="tab-content" id="code_editor_tab_content">
-                        <div class="tab-pane fade show active" id="html_content" role="tabpanel" aria-labelledby="html_content">
-                          <div id="container_html" class="container-code"></div>
-                        </div>
-                        <div class="tab-pane fade" id="css_content" role="css_content" aria-labelledby="css_content">
-                            <iframe id="code_editor_css" src="editor_css.html" class="iframe_editor"></iframe>
-                        </div>
-                        <div class="tab-pane fade" id="javascript_content" role="javascript_content" aria-labelledby="javascript_content">
-                            <iframe id="code_editor_js" src="editor_js.html" class="iframe_editor"></iframe>
-                        </div>
-                        <div class="tab-pane fade" id="preview_content" role="preview_content" aria-labelledby="preview_content">This is preview</div>
-                    </div>
-                </div>
-                <div id="right_upper_lower_widget">
-                    <div id="lecture_streaming">
-                        <p>agora streaming</p>
-                    </div>
-                    <div id="lecture_chatt">
-                        <p>chatting view or other</p>
-                    </div>
-                </div>
-
-            </div>
+          </div>
         </div>
-    </main>
 
-    <footer>
-        <p>This is footer</p>
-    </footer>
+        <div class="card">
+          <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Today's Example</button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#lecture_overview">
+            <div class="card-body">
+              <img src="https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/Simple_Login_Form_Flat_UI.png" width="400px" allign="left" />
+              <h5>You should make a simple Log-in part with HTML, CSS, and Javascript.</h5>
+              01. You should use text input box for ID and passwords.
+              <br /> 02. Passwords should be hidden.
+              <br /> 03. When you click log-in button, data set for ID and passwords will be send to a server.
+              <br /> 04. 'Lost your password?' button is needed.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" onclick="init();" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Flow Chart of Today's Example</button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#lecture_overview">
+            <div style="width: 100%; display: flex; justify-content: space-between">
+              <div id="myDiagramDiv_flowchart" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="middle_right_widget">
+        <div id="code_editor">
+          <ul class="nav nav-tabs" id="code_editor_tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" id="html-tab" data-toggle="tab" href="#html_content" role="tab" aria-controls="html" aria-selected="true">HTML</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="css-tab" data-toggle="tab" href="#css_content" role="tab" aria-controls="css" aria-selected="false">CSS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="javascript-tab" data-toggle="tab" href="#javascript_content" role="tab" aria-controls="javascript" aria-selected="false">Javascript</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview_content" role="tab" aria-controls="preview" aria-selected="false">Preview</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="code_editor_tab_content">
+            <div class="tab-pane fade show active" id="html_content" role="tabpanel" aria-labelledby="html_content">
+              <div id="container_html" class="container-code"></div>
+            </div>
+            <div class="tab-pane fade" id="css_content" role="css_content" aria-labelledby="css_content">
+              <iframe id="code-editor-css" src="editor_css.html" class="iframe_editor"></iframe>
+            </div>
+            <div class="tab-pane fade" id="javascript_content" role="javascript_content" aria-labelledby="javascript_content">
+              <iframe id="code_editor_js" src="editor_js.html" class="iframe_editor"></iframe>
+            </div>
+            <div class="tab-pane fade" id="preview_content" role="preview_content" aria-labelledby="preview_content">
+              <iframe id="code-editor-preview" sandbox="allow-scripts allow-same-origin"></iframe>
+            </div>
+          </div>
+        </div>
+        <div id="right_upper_lower_widget">
+          <div id="lecture_streaming">
+            <p>agora streaming</p>
+          </div>
+          <div id="lecture_chatt">
+            <p>chatting view or other</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>This is footer</p>
+  </footer>
 
 
   <script src="assets/js/agora.js"></script>
   <script src="node_modules/monaco-editor/min/vs/loader.js"></script>
   <script>
+    var html_editor;
+
     require.config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' }});
     require(['vs/editor/editor.main'], function() {
-      var editor = monaco.editor.create(document.getElementById('container_html'), {
+      html_editor = monaco.editor.create(document.getElementById('container_html'), {
         value: [
           '<!DOCTYPE html>\n' +
           '<html lang="en">\n' +
@@ -464,12 +441,31 @@
           '</html>\n'
         ].join('\n'), language: 'html'
       });
-
-      window.onresize = function() {
-        editor.layout();
-      };
-      console.log(editor.getModel().getValue());
+      //
+      // var css_editor = monaco.editor.create(document.getElementById('container_css'), {
+      //   value: [
+      //     'html {',
+      //     '}'
+      //   ].join('\n'), language: 'css'
+      // });
+      //
+      // window.onresize = function() {
+      //   html_editor.layout();
+      //   $(css_editor.getModel()).css('width', '100%');
+      //   $(css_editor.getModel()).css('height', '100%');
+      // };
+      html_editor.getModel().onDidChangeContent(updatePreview);
+      updatePreview();
     });
+
+    function updatePreview() {
+      var e = document.getElementById("code-editor-preview");
+      var t = e.contentDocument || e.contentWindow.document;
+      t.open();
+
+      t.write(html_editor.getModel().getValue());
+      t.close();
+    }
   </script>
 </body>
 
