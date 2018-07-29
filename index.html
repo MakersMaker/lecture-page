@@ -326,12 +326,9 @@ jQuery(function($) {
                 <div class="select">
                     <label for="videoSource">Video source: </label><select id="videoSource"></select>
                 </div>
-                <div id="div_join" class="panel panel-default">
-                    <div class="panel-body">
-                        Key: <input id="key" type="text" value="" size="36"></input>
-                        Channel: <input id="channel" type="text" value="1000" size="4"></input>
-                        Host: <input id="video" type="checkbox" checked></input>
-                        <button id="join" class="btn btn-primary" onclick="join()">Join</button>
+                <div id="div_join" class="panel panel-default" >
+                    <div class="panel-body" >
+                        <button id="join" class="btn btn-primary" onclick="join()" >Join</button>
                         <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
                         <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
                         <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
@@ -463,20 +460,22 @@ jQuery(function($) {
         document.getElementById("join").disabled = true;
         document.getElementById("video").disabled = true;
         var channel_key = null;
+        var key_value = "517fcf74439040fa8f1d9a979df65338";
+        var channel_value = "1000";
 
-        console.log("Init AgoraRTC client with vendor key: " + key.value);
+        console.log("Init AgoraRTC client with vendor key: " + key_value);
         client = AgoraRTC.createClient({mode: 'interop'});
-        client.init(key.value, function () {
+        client.init(key_value, function () {
             console.log("AgoraRTC client initialized");
-            client.join(channel_key, channel.value, null, function(uid) {
+            client.join(channel_key, channel_value, null, function(uid) {
                 console.log("User " + uid + " join channel successfully");
 
-                if (document.getElementById("video").checked) {
+                if (true) {
                     camera = videoSource.value;
                     microphone = audioSource.value;
-                    localStream = AgoraRTC.createStream({streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: document.getElementById("video").checked, screen: false});
+                    localStream = AgoraRTC.createStream({streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: true, screen: false});
                     //localStream = AgoraRTC.createStream({streamID: uid, audio: false, cameraId: camera, microphoneId: microphone, video: false, screen: true, extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'});
-                    if (document.getElementById("video").checked) {
+                    if (true) {
                         localStream.setVideoProfile('720p_3');
 
                     }
@@ -539,7 +538,7 @@ jQuery(function($) {
             var stream = evt.stream;
             console.log("Subscribe remote stream successfully: " + stream.getId());
             if ($('div#video #agora_remote'+stream.getId()).length === 0) {
-                $('div#video').append('<div id="agora_remote'+stream.getId()+'" style="float:left; width:810px;height:607px;display:inline-block;"></div>');
+                $('div#video').append('<div id="agora_remote'+stream.getId()+'" style="float:left; width:100%;height:100%;display:inline-block;"></div>');
             }
             stream.play('agora_remote' + stream.getId());
         });
