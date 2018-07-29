@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="ko">
+
 <head>
     <meta charset="utf-8" />
     <title>MakerMaker - Lecutre</title>
-    <meta name="Description" content="jQuery Splitter Demo"/>
-    <link rel="shortcut icon" href=""/>
+    <meta name="Description" content="jQuery Splitter Demo" />
+    <link rel="shortcut icon" href="" />
 
-    <link href="node_modules/jquery.splitter/css/jquery.splitter.css" rel="stylesheet"/>
+    <link href="node_modules/jquery.splitter/css/jquery.splitter.css" rel="stylesheet" />
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 
     <link rel="stylesheet" href="index.css">
@@ -20,41 +21,41 @@
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-<script>
-jQuery(function($) {
-   $('#left_middle_widget').width('100%').height('100%').split({
-        orientation: 'vertical',
-        limit: 10,
-        position: '30%',
-        percent: true
-   });
-   $('#middle_right_widget').split({
-        orientation: 'vertical',
-        limit: 10,
-        position: '60%',
-        percent: true
-   });
-   $('#right_upper_lower_widget').split({
-        orientation: 'horizontal',
-        limit: 10,
-        position: '35%',
-        percent: true
-   });
-});
-</script>
-<style>
-    #lecture_overview {
-    }
-    #code_editor {
+    <script>
+        jQuery(function ($) {
+            $('#left_middle_widget').width('100%').height('100%').split({
+                orientation: 'vertical',
+                limit: 10,
+                position: '30%',
+                percent: true
+            });
+            $('#middle_right_widget').split({
+                orientation: 'vertical',
+                limit: 10,
+                position: '60%',
+                percent: true
+            });
+            $('#right_upper_lower_widget').split({
+                orientation: 'horizontal',
+                limit: 10,
+                position: '35%',
+                percent: true
+            });
+        });
+    </script>
+    <style>
+        #lecture_overview {}
 
-    }
-    #lecture_streaming {
-        background-color: aqua;
-    }
-    #lecture_chatt {
-        background-color: violet;
-    }
-</style>
+        #code_editor {}
+
+        #lecture_streaming {
+            background-color: aqua;
+        }
+
+        #lecture_chatt {
+            background-color: violet;
+        }
+    </style>
 
 </head>
 <script id="code">
@@ -68,36 +69,36 @@ jQuery(function($) {
                 "linkFromPortIdProperty": "fromPort",
                 "linkToPortIdProperty": "toPort",
                 "nodeDataArray": [
-                    {"category": "Comment", "loc": "360 -10", "text": "Kookie Brittle", "key": -13},
-                    {"key": -1, "category": "Start", "loc": "175 0", "text": "Start"},
-                    {"key": 0, "loc": "-5 75", "text": "Preheat oven to 375 F"},
+                    { "category": "Comment", "loc": "360 -10", "text": "Kookie Brittle", "key": -13 },
+                    { "key": -1, "category": "Start", "loc": "175 0", "text": "Start" },
+                    { "key": 0, "loc": "-5 75", "text": "Preheat oven to 375 F" },
                     {
                         "key": 1,
                         "loc": "175 100",
                         "text": "In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"
                     },
-                    {"key": 2, "loc": "175 200", "text": "Gradually beat in 1 cup sugar and 2 cups sifted flour"},
-                    {"key": 3, "loc": "175 290", "text": "Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
-                    {"key": 4, "loc": "175 380", "text": "Press evenly into ungreased 15x10x1 pan"},
-                    {"key": 5, "loc": "355 85", "text": "Finely chop 1/2 cup of your choice of nuts"},
-                    {"key": 6, "loc": "175 450", "text": "Sprinkle nuts on top"},
-                    {"key": 7, "loc": "175 515", "text": "Bake for 25 minutes and let cool"},
-                    {"key": 8, "loc": "175 585", "text": "Cut into rectangular grid"},
-                    {"key": -2, "category": "End", "loc": "175 660", "text": "Enjoy!"}
+                    { "key": 2, "loc": "175 200", "text": "Gradually beat in 1 cup sugar and 2 cups sifted flour" },
+                    { "key": 3, "loc": "175 290", "text": "Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels" },
+                    { "key": 4, "loc": "175 380", "text": "Press evenly into ungreased 15x10x1 pan" },
+                    { "key": 5, "loc": "355 85", "text": "Finely chop 1/2 cup of your choice of nuts" },
+                    { "key": 6, "loc": "175 450", "text": "Sprinkle nuts on top" },
+                    { "key": 7, "loc": "175 515", "text": "Bake for 25 minutes and let cool" },
+                    { "key": 8, "loc": "175 585", "text": "Cut into rectangular grid" },
+                    { "key": -2, "category": "End", "loc": "175 660", "text": "Enjoy!" }
                 ],
                 "linkDataArray": [
-                    {"from": 1, "to": 2, "fromPort": "B", "toPort": "T"},
-                    {"from": 2, "to": 3, "fromPort": "B", "toPort": "T"},
-                    {"from": 3, "to": 4, "fromPort": "B", "toPort": "T"},
-                    {"from": 4, "to": 6, "fromPort": "B", "toPort": "T"},
-                    {"from": 6, "to": 7, "fromPort": "B", "toPort": "T"},
-                    {"from": 7, "to": 8, "fromPort": "B", "toPort": "T"},
-                    {"from": 8, "to": -2, "fromPort": "B", "toPort": "T"},
-                    {"from": -1, "to": 0, "fromPort": "B", "toPort": "T"},
-                    {"from": -1, "to": 1, "fromPort": "B", "toPort": "T"},
-                    {"from": -1, "to": 5, "fromPort": "B", "toPort": "T"},
-                    {"from": 5, "to": 4, "fromPort": "B", "toPort": "T"},
-                    {"from": 0, "to": 4, "fromPort": "B", "toPort": "T"}
+                    { "from": 1, "to": 2, "fromPort": "B", "toPort": "T" },
+                    { "from": 2, "to": 3, "fromPort": "B", "toPort": "T" },
+                    { "from": 3, "to": 4, "fromPort": "B", "toPort": "T" },
+                    { "from": 4, "to": 6, "fromPort": "B", "toPort": "T" },
+                    { "from": 6, "to": 7, "fromPort": "B", "toPort": "T" },
+                    { "from": 7, "to": 8, "fromPort": "B", "toPort": "T" },
+                    { "from": 8, "to": -2, "fromPort": "B", "toPort": "T" },
+                    { "from": -1, "to": 0, "fromPort": "B", "toPort": "T" },
+                    { "from": -1, "to": 1, "fromPort": "B", "toPort": "T" },
+                    { "from": -1, "to": 5, "fromPort": "B", "toPort": "T" },
+                    { "from": 5, "to": 4, "fromPort": "B", "toPort": "T" },
+                    { "from": 0, "to": 4, "fromPort": "B", "toPort": "T" }
                 ]
             }
             // 이거필요
@@ -183,7 +184,7 @@ jQuery(function($) {
                     // the main object is a Panel that surrounds a TextBlock with a rectangular Shape
                     $(go.Panel, "Auto",
                         $(go.Shape, "Rectangle",
-                            {fill: "#00A9C9", strokeWidth: 0},
+                            { fill: "#00A9C9", strokeWidth: 0 },
                             new go.Binding("figure", "figure")),
                         $(go.TextBlock, textStyle(),
                             {
@@ -262,16 +263,16 @@ jQuery(function($) {
                     },
                     new go.Binding("points").makeTwoWay(),
                     $(go.Shape,  // the highlight shape, normally transparent
-                        {isPanelMain: true, strokeWidth: 8, stroke: "transparent", name: "HIGHLIGHT"}),
+                        { isPanelMain: true, strokeWidth: 8, stroke: "transparent", name: "HIGHLIGHT" }),
                     $(go.Shape,  // the link path shape
-                        {isPanelMain: true, stroke: "gray", strokeWidth: 2}),
+                        { isPanelMain: true, stroke: "gray", strokeWidth: 2 }),
                     $(go.Shape,  // the arrowhead
-                        {toArrow: "standard", strokeWidth: 0, fill: "gray"}),
+                        { toArrow: "standard", strokeWidth: 0, fill: "gray" }),
                     $(go.Panel, "Auto",  // the link label, normally not visible
-                        {visible: false, name: "LABEL", segmentIndex: 2, segmentFraction: 0.5},
+                        { visible: false, name: "LABEL", segmentIndex: 2, segmentFraction: 0.5 },
                         new go.Binding("visible", "visible").makeTwoWay(),
                         $(go.Shape, "RoundedRectangle",  // the label shape
-                            {fill: "#F8F8F8", strokeWidth: 0}),
+                            { fill: "#F8F8F8", strokeWidth: 0 }),
                         $(go.TextBlock, "Yes",  // the label
                             {
                                 textAlign: "center",
@@ -312,142 +313,163 @@ jQuery(function($) {
 </script>
 
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <label for="audioSource">Audio source: </label><select id="audioSource"></select>
-                </li>
-                <li class="nav-item">
-                    <label for="videoSource">Video source: </label><select id="videoSource"></select>
-                </li>
-                <li class="nav-item">
-                    Key: <input id="key" type="text" value="" size="36"></input>
-                </li>
-                <li class="nav-item">
-                    Channel: <input id="channel" type="text" value="1000" size="4"></input>
-                </li>
-                <li class="nav-item">
-                    Host: <input id="video" type="checkbox" checked></input>
-                </li>
-                <li class="nav-item">
-                    <button id="join" class="btn btn-primary" onclick="join()">Join</button>
-                </li>
-                <li class="nav-item">
-                    <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
-                </li>
-                <li class="nav-item">
-                    <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
-                </li>
-                <li class="nav-item">
-                    <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<main id="content" class="article">
-    <div id="left_middle_widget">
-        <div id="lecture_overview">
-            <div class="card">
-                <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    Collapsible Group Item #1
-                    </button>
-                </h5>
-                </div>
-            
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#lecture_overview">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" onclick="init();" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Collapsible Group Item #2
-                    </button>
-                </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#lecture_overview">
-                    <div style="width: 100%; display: flex; justify-content: space-between">
-                        <div id="myDiagramDiv_flowchart" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Collapsible Group Item #3
-                    </button>
-                </h5>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#lecture_overview">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-                </div>
-            </div>
-        
-        </div>
-        <div id="middle_right_widget">
-            <div id="code_editor">
-                <ul class="nav nav-tabs" id="code_editor_tab" role="tablist">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                      <a class="nav-link active" id="html-tab" data-toggle="tab" href="#html_content" role="tab" aria-controls="html" aria-selected="true">HTML</a>
+                        <label for="audioSource">Audio source: </label>
+                        <select id="audioSource"></select>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="css-tab" data-toggle="tab" href="#css_content" role="tab" aria-controls="css" aria-selected="false">CSS</a>
+                        <label for="videoSource">Video source: </label>
+                        <select id="videoSource"></select>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" id="javascript-tab" data-toggle="tab" href="#javascript_content" role="tab" aria-controls="javascript" aria-selected="false">Javascript</a>
+                        Key:
+                        <input id="key" type="text" value="" size="36"></input>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview_content" role="tab" aria-controls="preview" aria-selected="false">Preview</a>
-                      </li>
-                  </ul>
-                  <div class="tab-content" id="code_editor_tab_content">
-                    <div class="tab-pane fade show active" id="html_content" role="tabpanel" aria-labelledby="html_content">
-                        <iframe id="code_editor_html" src="editor_html.html" class="iframe_editor"></iframe>
-                    </div>
-                    <div class="tab-pane fade" id="css_content" role="css_content" aria-labelledby="css_content">
-                        <iframe id="code_editor_css" src="editor_css.html" class="iframe_editor"></iframe>
-                    </div>
-                    <div class="tab-pane fade" id="javascript_content" role="javascript_content" aria-labelledby="javascript_content">
-                        <iframe id="code_editor_css" src="editor_js.html" class="iframe_editor"></iframe>
-                    </div>
-                    <div class="tab-pane fade" id="preview_content" role="preview_content" aria-labelledby="preview_content">This is preview</div>
-                  </div>
+                        Channel:
+                        <input id="channel" type="text" value="1000" size="4"></input>
+                    </li>
+                    <li class="nav-item">
+                        Host:
+                        <input id="video" type="checkbox" checked></input>
+                    </li>
+                    <li class="nav-item">
+                        <button id="join" class="btn btn-primary" onclick="join()">Join</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
+                    </li>
+                    <li class="nav-item">
+                        <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
+                    </li>
+                </ul>
             </div>
-            <div id="right_upper_lower_widget">
-                <div id="lecture_streaming">
-                    <p>agora streaming</p>
-                </div>
-                <div id="lecture_chatt">
-                    <p>chatting view or other</p>
-                </div>
-            </div>
+        </nav>
+    </header>
 
+    <main id="content" class="article">
+        <div id="left_middle_widget">
+            <div id="lecture_overview">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Today's Topic
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#lecture_overview">
+                        <div class="card-body">
+                            <img src="https://www.shareicon.net/data/256x256/2016/06/07/777351_multimedia_512x512.png">
+                            <h5>Log-in </h5>
+                            Log-in is one of the most impoortant part in making your own online shopping mall. From the Log-in part, everything for online
+                            shopping mall starts. You can't buy or sell products without log-in part. Log-in part is the
+                            most important part, but it is also hard to implement. But, It is not that difficult if you make
+                            it step-by-step. Then, Let's make the Log-in part from now!
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Today's Example
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#lecture_overview">
+                        <div class="card-body">
+                            <img src="https://cdn.colorlib.com/wp/wp-content/uploads/sites/2/Simple_Login_Form_Flat_UI.png" width="400px" allign="left">
+                            </p>
+                            <h5>You should make a simple Log-in part with HTML, CSS, and Javascript.</h5>
+                            01. You should use text input box for ID and passwords.
+                            <br> 02. Passwords should be hidden.
+                            <br> 03. When you click log-in button, data set for ID and passwords will be send to a server.
+                            <br> 04. 'Lost your password?' button is needed.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" onclick="init();" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">
+                                Flow Chart of Today's Example
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#lecture_overview">
+                        <div style="width: 100%; display: flex; justify-content: space-between">
+                            <div id="myDiagramDiv_flowchart" style="flex-grow: 1; height: 750px; border: solid 1px black"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="middle_right_widget">
+                <div id="code_editor">
+                    <ul class="nav nav-tabs" id="code_editor_tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="html-tab" data-toggle="tab" href="#html_content" role="tab" aria-controls="html" aria-selected="true">HTML</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="css-tab" data-toggle="tab" href="#css_content" role="tab" aria-controls="css" aria-selected="false">CSS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="javascript-tab" data-toggle="tab" href="#javascript_content" role="tab" aria-controls="javascript"
+                                aria-selected="false">Javascript</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="preview-tab" data-toggle="tab" href="#preview_content" role="tab" aria-controls="preview" aria-selected="false">Preview</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="code_editor_tab_content">
+                        <div class="tab-pane fade show active" id="html_content" role="tabpanel" aria-labelledby="html_content">
+                            <iframe id="code_editor_html" src="editor_html.html" class="iframe_editor"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="css_content" role="css_content" aria-labelledby="css_content">
+                            <iframe id="code_editor_css" src="editor_css.html" class="iframe_editor"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="javascript_content" role="javascript_content" aria-labelledby="javascript_content">
+                            <iframe id="code_editor_css" src="editor_js.html" class="iframe_editor"></iframe>
+                        </div>
+                        <div class="tab-pane fade" id="preview_content" role="preview_content" aria-labelledby="preview_content">This is preview</div>
+                    </div>
+                </div>
+                <div id="right_upper_lower_widget">
+                    <div id="lecture_streaming">
+                        <p>agora streaming</p>
+                    </div>
+                    <div id="lecture_chatt">
+                        <p>chatting view or other</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
-<footer>
-    <p>This is footer</p>
-</footer>
+    <footer>
+        <p>This is footer</p>
+    </footer>
 
 
-<script src="assets/js/agora.js"></script>
+    <script src="assets/js/agora.js"></script>
 </body>
+
 </html>
