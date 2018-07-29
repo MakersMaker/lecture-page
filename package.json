@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server --port=8083"
+    "start": "http-server -p 8083"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
     "jquery": "^3.3.1",
     "jquery.splitter": "^0.27.1",
     "monaco-editor": "^0.13.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
   }
 }

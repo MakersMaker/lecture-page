@@ -409,7 +409,6 @@
   </main>
 
   <footer>
-    <p>This is footer</p>
   </footer>
 
   <script language="javascript">
@@ -587,55 +586,6 @@
       //audioSelect.onchange = getDevices;
       //videoSelect.onchange = getDevices;
       getDevices();
-  </script>
-
-  <script src="node_modules/monaco-editor/min/vs/loader.js"></script>
-  <script>
-    var html_editor;
-
-    require.config({ paths: { 'vs': 'node_modules/monaco-editor/min/vs' }});
-    require(['vs/editor/editor.main'], function() {
-      html_editor = monaco.editor.create(document.getElementById('container_html'), {
-        value: [
-          '<!DOCTYPE html>\n' +
-          '<html lang="en">\n' +
-          '<head>\n' +
-          '\t<meta charset="UTF-8">\n' +
-          '\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-          '\t<meta http-equiv="X-UA-Compatible" content="ie=edge">\n' +
-          '\t<title>Document</title>\n' +
-          '</head>\n\n' +
-          '<body>\n' +
-          '<p>Hello World</p>' +
-          '</body>\n\n' +
-          '</html>\n'
-        ].join('\n'), language: 'html'
-      });
-      //
-      // var css_editor = monaco.editor.create(document.getElementById('container_css'), {
-      //   value: [
-      //     'html {',
-      //     '}'
-      //   ].join('\n'), language: 'css'
-      // });
-      //
-      // window.onresize = function() {
-      //   html_editor.layout();
-      //   $(css_editor.getModel()).css('width', '100%');
-      //   $(css_editor.getModel()).css('height', '100%');
-      // };
-      html_editor.getModel().onDidChangeContent(updatePreview);
-      updatePreview();
-    });
-
-    function updatePreview() {
-      var e = document.getElementById("code-editor-preview");
-      var t = e.contentDocument || e.contentWindow.document;
-      t.open();
-
-      t.write(html_editor.getModel().getValue());
-      t.close();
-    }
   </script>
 </body>
 
