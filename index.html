@@ -38,35 +38,36 @@
                 "linkFromPortIdProperty": "fromPort",
                 "linkToPortIdProperty": "toPort",
                 "nodeDataArray": [
-                    {"key": -1, "category": "Start", "loc": "175 0", "text": "Start"},
-                    {"key": 0, "loc": "50 75", "text": "Preheat oven to 375 F"},
+                    {"key": 0, "category": "Start", "loc": "175 0", "text": "Build ui"},
+                    {"key": 1, "loc": "175 75", "text": "expose port: '/login', '/register', '/forget'"},
                     {
-                        "key": 1,
-                        "loc": "175 100",
-                        "text": "In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"
+                        "key": 2,
+                        "loc": "175 150",
+                        "text": "integrate with passport.js"
                     },
-                    {"key": 2, "loc": "175 200", "text": "Gradually beat in 1 cup sugar and 2 cups sifted flour"},
-                    {"key": 3, "loc": "175 290", "text": "Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
-                    {"key": 4, "loc": "175 380", "text": "Press evenly into ungreased 15x10x1 pan"},
-                    {"key": 5, "loc": "300 85", "text": "Finely chop 1/2 cup of your choice of nuts"},
-                    {"key": 6, "loc": "175 450", "text": "Sprinkle nuts on top"},
-                    {"key": 7, "loc": "175 515", "text": "Bake for 25 minutes and let cool"},
-                    {"key": 8, "loc": "175 585", "text": "Cut into rectangular grid"},
-                    {"key": -2, "category": "End", "loc": "175 660", "text": "Enjoy!"}
+                    {"key": 3, "loc": "75 225", "text": "login buton behaviour"},
+                    {"key": 4, "loc": "75 300", "text": "check login"},
+                    {"key": 5, "loc": "71 375", "text": "user exists" , "category":"condition"},
+                    {"key": 6, "loc": "75 600", "text": "yes: dashbord"},
+                    {"key": 7, "loc": "140 450", "text": "no: create user"},
+                    {"key": 8, "loc": "140 525", "text": "post '/register'"},
+                    {"key": 9, "loc": "275 225", "text": "forget password button behaviour"},
+                    {"key": 10, "loc": "275 300", "text": "post '/forget'"},
+                    {"key": 11, "loc": "275 375", "text": "send email to user's email"},
                 ],
                 "linkDataArray": [
-                    {"from": 1, "to": 2, "fromPort": "B", "toPort": "T"},
+                    {"from": 0, "to": 1, "fromPort": "B", "toPort": "T", },
+                    {"from": 1, "to": 2, "fromPort": "B", "toPort": "T", },
                     {"from": 2, "to": 3, "fromPort": "B", "toPort": "T"},
+                    {"from": 2, "to": 9, "fromPort": "B", "toPort": "T"},
                     {"from": 3, "to": 4, "fromPort": "B", "toPort": "T"},
-                    {"from": 4, "to": 6, "fromPort": "B", "toPort": "T"},
-                    {"from": 6, "to": 7, "fromPort": "B", "toPort": "T"},
+                    {"from": 4, "to": 5, "fromPort": "B", "toPort": "T"},
+                    {"from": 5, "to": 6, "fromPort": "B", "toPort": "T"},
+                    {"from": 5, "to": 7, "fromPort": "B", "toPort": "T"},
                     {"from": 7, "to": 8, "fromPort": "B", "toPort": "T"},
-                    {"from": 8, "to": -2, "fromPort": "B", "toPort": "T"},
-                    {"from": -1, "to": 0, "fromPort": "B", "toPort": "T"},
-                    {"from": -1, "to": 1, "fromPort": "B", "toPort": "T"},
-                    {"from": -1, "to": 5, "fromPort": "B", "toPort": "T"},
-                    {"from": 5, "to": 4, "fromPort": "B", "toPort": "T"},
-                    {"from": 0, "to": 4, "fromPort": "B", "toPort": "T"}
+                    {"from": 8, "to": 6, "fromPort": "B", "toPort": "T"},
+                    {"from": 9, "to": 10, "fromPort": "B", "toPort": "T"},
+                    {"from": 10, "to": 11, "fromPort": "B", "toPort": "T"},
                 ]
             }
             // 이거필요
