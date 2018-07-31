@@ -5,7 +5,7 @@
 npm i
 npm start
 ```
-- Visit localhost:8083
+- Visit http://localhost:8083
 
 ## Technical Details
 
@@ -19,6 +19,7 @@ npm start
 1. We made use of the API Video Broadcast API to stream video from one master client to all connected browsers
 
 #### Code
+
 1. https://github.com/MakersMaker/lecture-page
 
 ### Feature 2 - vscode live code share on the web
